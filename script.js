@@ -1,12 +1,11 @@
 const tabs = document.querySelectorAll('.tab');
 const tabContents = document.querySelectorAll('.tab-content');
-const resumeLists=document.querySelectorAll('.resume-list');
-const resumeBoxs=document.querySelectorAll('.resume-box');
+const resumeLists = document.querySelectorAll('.resume-list');
+const resumeBoxs = document.querySelectorAll('.resume-box');
 
-
-
-resumeLists.forEach((list,idx) => {
-    list.addEventListener('click',() =>{
+// Handling resume list switching
+resumeLists.forEach((list, idx) => {
+    list.addEventListener('click', () => {
         document.querySelector('.resume-list.active').classList.remove('active');
         list.classList.add('active');
 
@@ -15,8 +14,7 @@ resumeLists.forEach((list,idx) => {
     });
 });
 
-
-
+// Handling general tabs
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         // Remove active class from all tabs and contents
