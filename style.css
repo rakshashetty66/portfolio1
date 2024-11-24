@@ -681,3 +681,31 @@ span {
         box-shadow: .5rem 1rem rgba(0, 0, 0, .2);
     }
 }
+
+/* Portfolio Section - Adjustments for Responsive Layout */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 2rem; /* Reduce gap */
+        padding: 0 5%; /* Add padding for better alignment */
+    }
+
+    .portfolio-box {
+        width: 100%; /* Ensure boxes take the full width */
+        margin: 0 auto; /* Center align each portfolio box */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-container {
+        gap: 1.5rem; /* Further reduce gap for smaller screens */
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2rem; /* Adjust heading size for readability */
+    }
+
+    .portfolio-layer a i {
+        font-size: 1.8rem; /* Adjust icon size for smaller screens */
+    }
+}
