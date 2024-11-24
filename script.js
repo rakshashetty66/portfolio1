@@ -26,3 +26,26 @@ tabs.forEach(tab => {
         document.querySelector(`.${tab.dataset.target}`).classList.add('active');
     });
 });
+
+// Initialize EmailJS with your Public Key
+emailjs.init("jlvEzVNADOpknLS1D");
+
+document.querySelector('.contact form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = {
+        from_name: document.querySelector('input[name="name"]').value,
+        from_email: document.querySelector('input[name="email"]').value,
+        message: document.querySelector('textarea[name="message"]').value,
+    };
+
+    emailjs.send("service_7u4oo5r", "template_jowei18", formData)
+        .then(function(response) {
+            alert('Message sent successfully!');
+            console.log('Success:', response.status, response.text);
+        }, function(error) {
+            alert('Message failed to send.');
+            console.log('Error:', error);
+        });
+});
+
